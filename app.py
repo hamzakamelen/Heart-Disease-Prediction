@@ -44,10 +44,11 @@ input_data = input_data.apply(pd.to_numeric, errors='coerce')
 input_data = input_data.fillna(0)
 
 # Predict
-if st.button("Predict Heart Disease Severity"):
+if st.button("Predict Heart Disease"):
     prediction = model.predict(input_data)
     if prediction[0] == 0:
-        result = "No heart disease (healthy heart)"
+        result = "No heart disease (Healthy heart)"
+        st.success(f"Prediction: {result}")
     else:
         result = f"Heart disease detected (Severity Level: {prediction[0]})"
-    st.subheader(f"Prediction: {result}")
+        st.error(f"Prediction: {result}")
