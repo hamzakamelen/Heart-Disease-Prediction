@@ -7,3 +7,5 @@ matplotlib
 seaborn
 plotly
 xgboost
+lightgbm
+nbformat>=4.2.0
